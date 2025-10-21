@@ -25,11 +25,11 @@ version: str = version_re.group(1)
 
 
 setup(
-    name="kmv",
+    name="mjviewer",
     version=version,
-    description="The kscale-mujoco-viewer project",
-    author="Ali Kuwajerwala, Wesley Maa",
-    url="https://github.com/kscalelabs/kscale-mujoco-viewer",
+    description="The mjviewer project, based on kscale-mujoco-viewer",
+    author="Wesley Maa",
+    url="https://github.com/CCBR-Humanoid/mujoco-viewer",
     long_description=long_description,
     long_description_content_type="text/markdown",
     python_requires=">=3.11",
@@ -37,9 +37,4 @@ setup(
     tests_require=requirements_dev,
     extras_require={"dev": requirements_dev},
     packages=find_packages(),
-    # entry_points={
-    #     "console_scripts": [
-    #         "kmv.cli:main",
-    #     ],
-    # },
 )
