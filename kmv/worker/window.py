@@ -54,7 +54,7 @@ class ViewerWindow(QMainWindow):
 
         cfg = view_conf
         self.resize(cfg.width, cfg.height)
-        self.setWindowTitle("K-Scale MuJoCo Viewer")
+        self.setWindowTitle(ViewerConfig.window_title)
 
         self._model, self._data = model, data
         self._rings = rings
@@ -147,7 +147,7 @@ class ViewerWindow(QMainWindow):
         self._settings_menu.addAction(settings_action)
 
         # Help widget
-        self._help_widget = HelpWidget(self)
+        self._help_widget = HelpWidget(self, application_name=cfg.window_title)
         help_dock = QDockWidget("Help", self)
         help_dock.setWidget(self._help_widget)
         self.addDockWidget(Qt.DockWidgetArea.RightDockWidgetArea, help_dock)

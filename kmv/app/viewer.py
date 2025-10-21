@@ -74,6 +74,7 @@ class QtViewer:
         camera_lookat: tuple[float, float, float] | None = None,
         track_body_id: int | None = None,
         timeout_secs: float | None = None,
+        window_title: str = "K-Scale MuJoCo Viewer",
     ) -> None:
         if mode not in ("window", "offscreen"):
             raise ValueError(f"unknown render mode {mode!r}")
@@ -92,6 +93,7 @@ class QtViewer:
             camera_elevation=camera_elevation,
             camera_lookat=camera_lookat,
             track_body_id=track_body_id,
+            window_title=window_title,
         )
 
         self._mode = mode

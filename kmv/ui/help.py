@@ -6,7 +6,7 @@ from PySide6.QtWidgets import QTextEdit, QVBoxLayout, QWidget
 class HelpWidget(QWidget):
     """Widget that displays help instructions for the MuJoCo Viewer."""
 
-    def __init__(self, parent: QWidget | None = None) -> None:
+    def __init__(self, parent: QWidget | None = None, application_name: str = "K-Scale MuJoCo Viewer") -> None:
         super().__init__(parent)
 
         layout = QVBoxLayout(self)
@@ -14,27 +14,27 @@ class HelpWidget(QWidget):
         # Create text area for help content
         self._text_edit = QTextEdit(self)
         self._text_edit.setReadOnly(True)
-        self._text_edit.setHtml(self._get_help_content())
+        self._text_edit.setHtml(self._get_help_content(application_name))
 
         layout.addWidget(self._text_edit)
 
-    def _get_help_content(self) -> str:
+    def _get_help_content(self, application_name: str) -> str:
         """Returns the HTML-formatted help content."""
-        return """
+        return f"""
         <style>
-            li {
+            li {{
                 margin-bottom: 8px;
-            }
-            ul {
+            }}
+            ul {{
                 margin-bottom: 26px;
-            }
-            h3 {
+            }}
+            h3 {{
                 margin-top: 20px;
                 margin-bottom: 12px;
-            }
+            }}
         </style>
 
-        <h2>K-Scale MuJoCo Viewer - Help</h2>
+        <h2>{application_name} - Help</h2>
 
         <h3>📷 Camera Controls</h3>
         <ul>

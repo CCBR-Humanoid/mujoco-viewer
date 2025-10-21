@@ -201,3 +201,4 @@ class ViewerConfig:
     camera_elevation: Optional[float] = None
     camera_lookat: Optional[Tuple[float, float, float]] = None
     track_body_id: Optional[int] = None
+    window_title: str = "K-Scale MuJoCo Viewer"
