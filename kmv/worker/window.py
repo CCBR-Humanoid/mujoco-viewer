@@ -54,7 +54,7 @@ class ViewerWindow(QMainWindow):
 
         cfg = view_conf
         self.resize(cfg.width, cfg.height)
-        self.setWindowTitle(ViewerConfig.window_title)
+        self.setWindowTitle(cfg.window_title)
 
         self._model, self._data = model, data
         self._rings = rings
